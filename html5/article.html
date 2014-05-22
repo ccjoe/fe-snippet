@@ -1,0 +1,42 @@
+<!-- article 代码片断 -->
+<article>
+	<!-- 文章头部模块 -->
+	<header>
+		<!-- 主标题 -->
+		<hgroup>
+			<h1>article 模块代码片断</h1>
+			<h2>--- html5 代码片断最佳实践</h2>
+		</hgroup>
+		<!-- pubdate:指定文章或网页的发布日期 -->
+		<p>发布日期：<time datatime="2014-05-21" pubdate>2014年5月21日</time></p>
+		<!-- 文章内导航模块 -->
+		<nav>
+			<ul>
+				<li><a href="#aHeader">article header部分</a></li>
+				<li><a href="#aSection">article 内容部分</a></li>
+				<li><a href="#aFooter">article footer部分</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- 文章内容模块 -->
+	<!-- section必须配合标题元素使用 -->
+	<section id="aHeader">
+		<h1>article header部分</h1>
+		<p>article header部分 一般包含 标题模块，日期，作者，来源等头注，文章简介模块，文章导航模块</p>
+	</section>	
+	<section id="aSection">
+		<h1>article 内容部分</h1>
+		<p>article 内容部分，即article正文，用section分段来厘清article内结构，section必须配合标题元素使用。
+		</p>
+	</section>
+	<section id="aFooter">
+		<h1>article footer部分</h1>
+		<p>article footer部分，即文章的脚注</p>
+	</section>
+
+	<!-- 文章脚注模块 -->
+	<footer>
+		<p><small>版权所有：JOE</small></p>
+	</footer>
+
+</article>
