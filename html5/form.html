@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="UTF-8">
+<form id="html5Form" name="html5Form">
+	<!-- autofocus属性 -->
+	请输入搜索词:<input type="text" autofocus>
+
+	<!-- list属性 autocomplete属性 on|off|""-->
+	下拉框:<input type="text" name='list' list='greetings'>
+	<datalist id="greetings" autocomplete="off">
+		<option value="Good Morning">Good Morning</option>
+		<option value="Good Afternoon">Good Afternoon</option>
+		<option value="Good Evening">Good Evening</option>
+	</datalist>
+
+	新增表单类型
+	<label for="tel"	>tel:</label>		<input  name="tel" pattern="[0-9]{11}" placeholder="请输入任意11位数字"  type="tel">
+	<label for="search" >search:</label>	<input  name="search" type="search" required>
+	<label for="url"	>url:</label>		<input  name="url"	  type="url" value="http://www.joecora.com">
+	<label for="email"	>email:</label>		<input  name="email"  type="email" value="icareu.joe@gmail.com">
+	<label for="datetime">datetime:</label>	<input  name="datetime" type="datetime">
+	<label for="dtlocal">dtlocal:</label>	<input  name="dtlocal"  type="datetime-local">
+	<label for="date"	>date:</label>		<input  name="date"	  type="date" value="2010-10-10">
+	<label for="month"	>month:</label>		<input  name="month"  type="month" value="2010-10">
+	<label for="week"	>week:</label>		<input  name="week"	  type="week" value="2010-W10">
+	<label for="time"	>time:</label>		<input  name="time"	  type="time" value="10:00">
+	<label for="color"	>color: </label>	<input  name="color"  type="color">
+	<label for="file"	>file:</label>	 	<input  name="file"	  type="file">
+	<label for="number" >number:</label>	<input  name="number" type="number" min=5 max=10 step=2>
+	<label for="range"	>range:</label>		<input  name="range"  type="range" min=5 max=10 step=2>
+	<button>submit</button>
+
+</form>
+	
+<output form="html5Form" onforminput='value="range.value"'>8</output>
+

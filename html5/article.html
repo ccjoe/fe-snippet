@@ -1,3 +1,5 @@
+<!doctype html>
+<meta charset="UTF-8">
 <!-- article 代码片断 -->
 <article>
 	<!-- 文章头部模块 -->
@@ -8,7 +10,12 @@
 			<h2>--- html5 代码片断最佳实践</h2>
 		</hgroup>
 		<!-- pubdate:指定文章或网页的发布日期 -->
-		<p>发布日期：<time datatime="2014-05-21" pubdate>2014年5月21日</time></p>
+		<p>
+			发布日期：<time datatime="2014-05-21" pubdate>2014年5月21日</time> 
+			<address>作者：<a href="">Joe</a></address>
+			<a href="">评论</a>
+		</p>
+		
 		<!-- 文章内导航模块 -->
 		<nav>
 			<ul>
@@ -17,7 +24,11 @@
 				<li><a href="#aFooter">article footer部分</a></li>
 			</ul>
 		</nav>
+		<section class="excerpt">
+			这里是文章概要，简明呃要概述文章主旨
+		</section>
 	</header>
+
 	<!-- 文章内容模块 -->
 	<!-- section必须配合标题元素使用 -->
 	<section id="aHeader">
@@ -32,11 +43,24 @@
 	<section id="aFooter">
 		<h1>article footer部分</h1>
 		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
+		<p>article footer部分，即文章的脚注</p>
 	</section>
 
 	<!-- 文章脚注模块 -->
 	<footer>
-		<p><small>版权所有：JOE</small></p>
+		<span>tags:<a href="">article</a><a href="">html5</a></span>
+		<!-- address元素用于呈现联系信息。 -->
+		<small>版权所有：JOE</small>
+		<address>本文其它作者
+			<a href="">Joe</a>
+			<a href="">Cora</a>
+			<a href="">Mary</a>
+		</address>
 	</footer>
 
 </article>
