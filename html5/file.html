@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8">
+<title>使用文件模块</title>
+
+<div style="width:150px; height:150px; background-color:#ccc; 
+			border:2px dashed #aaa; padding:30px; " 
+	 draggable="true">请拖放</div>
+
+<div style="width:150px; height:150px; background-color:#eee; border:2px dashed #aaa; padding:30px" 
+	 ></div>
+
+<h1>读取图像</h1>
+<form action="getfile.php" enctype="multipart/form-data">
+
+	<input type="file"  id="file" name="nfile" style="width:150px; height:150px; background-color:#ccc; border:2px dashed #aaa; padding:30px" 
+	 draggable="true" multiple /><!-- accept="image/*"  --> 
+	
+		<h2>文件信息:</h2>
+		<div id="fileInfo">
+			
+		</div>
+		
+		<h2>IMG base64信息</h2>
+		<div id="fileDataURL">
+			
+		</div>
+		
+		<h2>文本信息</h2>
+		<div id="text">
+			
+		</div>
+		<h2>二进制信息</h2>
+		<div id="binary">
+			
+		</div>		
+		<h2>图片信息</h2>
+		<div id="imgsrc">
+		
+		</div>
+	
+	<input type="button" class="" onclick="showVal();" value="showInfo" />
+	<input type="submit" />
+</form>
+
+<script type="text/javascript">
+	if(window.File && window.FileReader && window.FileList){
+		//判断是否支持HTML5文件操作API	
+		function $(idName){
+			return document.getElementById(idName);
+		}
+		
+		//file 对象 与 FileList 对象 继承自 Blob 对象
+		function showVal(){
+			var file;
+			for(var i=0; i<$("file").files.length; i++){
+				file = $("file").files[i];
+				
+			//	if(!/image\/\w+/.test(file.type)){
+			//		alert(file.name + "不是图像文件！");
+			//		break;
+			//	}else{
+			//		alert(file.name + "文件已上传");
+			//	}
+				showFileInfo(file);
+				//FileReader接口 =》将文件读入内存
+				if(typeof FileReader !== void 0){
+					//决断是否支持FileReader接口
+
+					//将文件以Data URL形式读入页面
+					readAsDataURL(file,$("fileDataURL"));
+					//将文件以文本形式读入页面
+					readAsText(file);
+					//将文件以二进制读入页面
+					readAsBinaryString(file);
+				}else{
+					alert("你的浏览器未实现 FileReader 接口");
+				}
+			}
+		}
+	}else{
+		alert("你的浏览器未实现 FileReader 接口");
+	}
+	
+	//file 对象 与 FileList 对象 继承自 Blob 对象
+	function showFileInfo(file){		
+		dinfo = document.createElement("div");
+		for(var prop in file){
+			dinfo.innerHTML += "file["+prop+"]:" + file[prop] + "</br>";
+		}
+		$("fileInfo").appendChild(dinfo);	
+	}
+	
+	//FileReader接口 =》将文件读入内存
+	function readAsDataURL(file,result){
+		if(!/image\/\w+/.test(file.type)){
+			return false;
+		} 
+		var reader = new FileReader();
+		reader.readAsDataURL(file);
+		
+		var img = document.createElement("img");
+		
+		reader.onload = function(f){
+			
+			result.innerHTML = this.result;
+			img.src = this.result;
+			$("imgsrc").appendChild(img);
+			
+			for(var i in f){
+				console.log("f["+i+"]:" + f[i])
+			}
+		}
+	}
+	
+	function readAsText(file){
+		var reader = new FileReader();
+		reader.readAsText(file);
+		reader.onload = function(f){
+			$("text").innerHTML = this.result;
+		}
+	}
+	
+	function readAsBinaryString(file){
+		var reader = new FileReader();
+		reader.readAsBinaryString(file);
+		reader.onload = function(f){
+			$("binary").innerHTML = this.result;
+		}
+	}
+
+</script>
