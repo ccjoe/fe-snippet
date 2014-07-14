@@ -1,7 +1,7 @@
 #####My test host for everywhere
 
 
-* ------------------ WampServer ---------------------
+*  WampServer 
 
 ```
 <VirtualHost *:80>
@@ -18,19 +18,20 @@
     ServerName www.joecora.com
     DocumentRoot "F:\yun\ITCloud\JoecoraPhp"
 </VirtualHost>
+
 ```
 
-* --------------------- XAMPP ----------------------
+*  XAMPP
 
 
 
 
 
 
-
-* --------------------- HOST -----------------------
+*  HOST
 
 ```
 127.0.0.1 js.jc.me
 127.0.0.1 it.jc.me
+
 ```
