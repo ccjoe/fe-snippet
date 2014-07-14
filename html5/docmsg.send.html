@@ -1,0 +1,10 @@
+<!doctype html>
+<meta charset="UTF-8">
+<script>
+window.addEventListener("message",function(ev){
+	document.body.innerHTML = ev.origin + "发来的消息：" + ev.data.b + "\n";
+	ev.source.postMessage("Hi,这里是：" + this.location, ev.origin);
+},false);
+</script>
+<h1>通信发送示例页面</h1>
+

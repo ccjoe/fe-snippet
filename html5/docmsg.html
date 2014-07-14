@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="UTF-8">
+<script>
+	window.addEventListener("message",function(ev){
+		//忽略非指定URL消息
+		// if(ev.origin@="http://www.test.com"){
+		// 	return;
+		// }
+
+		alert("从"+ev.origin+"收到的消息：\n" + ev.data);
+	},false);
+	var jsobj = { a:4,b:8 };
+	function sayHi(){
+		var iframe = window.frames[0];
+		iframe.postMessage(jsobj,window.location.href);
+	}	
+</script>
+<h1>通信示例</h1>
+
+<iframe src="docmsg.send.html" frameborder="0" onload="sayHi()"></iframe>
+

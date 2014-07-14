@@ -53,14 +53,23 @@
 
 	<!-- 文章脚注模块 -->
 	<footer>
-		<span>tags:<a href="">article</a><a href="">html5</a></span>
-		<!-- address元素用于呈现联系信息。 -->
+		<dl>
+			<dt>tags</dt>
+			<dd><a href="">article</a><a href="">html5</a></dd>
+			
+			<dt>本文其它作者</dt>
+			<dd>
+				<address>
+					<a href="">Joe</a>, 作品：<cite>JOECORA</cite> cite <!-- 仅表示作品 -->
+					<a href="">Cora</a>
+					<a href="">Mary</a>
+				</address>
+			</dd>			
+		</dl>
 		<small>版权所有：JOE</small>
-		<address>本文其它作者
-			<a href="">Joe</a>
-			<a href="">Cora</a>
-			<a href="">Mary</a>
-		</address>
+		<!-- address元素用于呈现联系信息。 -->
+		
+
 	</footer>
 
 </article>

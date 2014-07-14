@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#version 1.311
+
+#缓存
+CACHE:
+localhost-db.html
+script.js
+
+#需要访问网络
+#NETWORK:
+
+#每行指定两个资源文件：在线访问的与本地备用的
+#FALLBACK:
